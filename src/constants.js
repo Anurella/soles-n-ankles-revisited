@@ -16,3 +16,18 @@ export const WEIGHTS = {
   medium: 600,
   bold: 800,
 };
+
+
+// setting up break points 
+const BREAKPOINTS = {
+   phone: 37.5,
+   tablet: 59.375,
+   laptop:81.25,
+}
+
+// desktop approach
+export const QUERIES = {
+  'phones': `(max-width: ${BREAKPOINTS.phone}rem)`,
+  'tablets': `(max-width: ${BREAKPOINTS.tablet}rem)`,
+  'laptops': `(max-width: ${BREAKPOINTS.laptop}rem)`,
+}

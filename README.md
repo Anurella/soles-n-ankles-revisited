@@ -1,16 +1,16 @@
-# Sole&Ankle, Revisited — Module 5 workshop
+# Sole&Ankles, Revisited
 
-In the Flexbox module, we built an e-commerce store:
+This is my solution to module 5 workshop for the [CSS-for-JS course](https://courses.joshwcomeau.com/css-for-js). A course by [@joshwcomeau](https://github.com/joshwcomeau). A continuation of Module 4 [visit repo](https://github.com/Anurella/soles-n-ankles)
+
+In module 4, we built an e-commerce store:
 
 ![A screenshot of the original Flexbox module workshop](./docs/original-desktop.png)
 
-In this workshop, we'll make this application responsive, so that it looks great and works well on phones and tablets:
+Goal: to make application responsive, so that it looks great and works well on phones and tablets:
 
 ![A GIF showing how the design changes across viewport widths](./docs/resize-demo.gif)
 
-The design can be found on Figma:
-
-- https://www.figma.com/file/kAL3AumTUV11y1IqHhltB6/Sole-and-Ankle-%E2%80%94-Mockup
+- Access the design on Figma: https://www.figma.com/file/kAL3AumTUV11y1IqHhltB6/Sole-and-Ankle-%E2%80%94-Mockup
 
 We'll use a **desktop-first** approach for this process, and our breakpoints will be set as follows:
 
@@ -97,7 +97,7 @@ As it stands, we have a few colors in our `constants.js` file. When we want to u
 import { COLORS } from '../../constants';
 
 const Something = styled.p`
-  color: ${COLORS.gray[900]};
+	color: ${COLORS.gray[900]};
 `;
 ```
 
@@ -105,7 +105,7 @@ This works fine, but I personally prefer to use CSS variables for colors. It mak
 
 ```jsx
 const Something = styled.p`
-  color: var(--color-gray-900);
+	color: var(--color-gray-900);
 `;
 ```
 
