@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/macro';
+import { QUERIES } from '../../constants';
 
 import Header from '../Header';
 import ShoeIndex from '../ShoeIndex';
@@ -19,9 +20,11 @@ const App = () => {
 
 const Main = styled.main`
   padding: 64px 32px;
-
-  @media (max-width: 37.5rem) {
-     padding-inline:16px;
+  @media ${QUERIES.tablets} {
+     padding:48px 32px;
+  }
+  @media ${QUERIES.phones} {
+    padding-inline:16px;
   }
 `;
 

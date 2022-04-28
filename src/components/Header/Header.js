@@ -2,10 +2,11 @@ import React from 'react';
 import styled from 'styled-components/macro';
 
 
-import { COLORS, WEIGHTS, QUERIES } from '../../constants';
+import { WEIGHTS, QUERIES } from '../../constants';
 import Logo from '../Logo';
 import SuperHeader from '../SuperHeader';
 import MobileMenu from '../MobileMenu';
+import VisuallyHidden from '../VisuallyHidden';
 import Icon from '../Icon';
 import UnstyledButton from '../UnstyledButton';
 
@@ -21,9 +22,9 @@ const Header = () => {
 		<header>
 			<SuperHeader />
 			<MainHeader>
-				<Side>
+				<LogoWrapper>
 					<Logo />
-				</Side>
+				</LogoWrapper>
 				<Nav>
 					<NavLink href="/sale" >Sale</NavLink>
 					<NavLink href="/new">New&nbsp;Releases</NavLink>
@@ -33,16 +34,24 @@ const Header = () => {
 					<NavLink href="/kids">Kids</NavLink>
 					<NavLink href="/collections">Collections</NavLink>
 				</Nav>
-				<Side>
-					<IconWrapper>
+
+				<Side />
+
+				<MobileTriggers>
+					<ShoppingButton>
 						<Icon id="shopping-bag"></Icon>
+						<VisuallyHidden> shopping cart </VisuallyHidden>
+					</ShoppingButton>
+					<UnstyledButton>
 						<Icon id="search"></Icon>
-						<UnstyledButton onClick={() => setShowMobileMenu(true)}>
-							{' '}
-							<Icon id="menu"></Icon>{' '}
-						</UnstyledButton>
-					</IconWrapper>
-				</Side>
+						<VisuallyHidden> search site </VisuallyHidden>
+					</UnstyledButton>
+					<UnstyledButton onClick={() => setShowMobileMenu(true)}>
+						<Icon id="menu"></Icon>
+						<VisuallyHidden> Open Menu </VisuallyHidden>
+					</UnstyledButton>
+				</MobileTriggers>
+
 			</MainHeader>
 
 			<MobileMenu
@@ -62,6 +71,8 @@ const MainHeader = styled.div`
 
 	@media ${QUERIES.tablets} {
 		border-top: 4px solid var(--color-gray-900);
+		justify-content: space-between;
+		align-items: center;
 	}
 
 	@media ${QUERIES.phones} {
@@ -71,11 +82,7 @@ const MainHeader = styled.div`
 
 const Nav = styled.nav`
 	display: flex;
-	gap: clamp(
-		1rem,
-    5vw - 1.5rem,
-		6rem
-	  );
+	gap: clamp( 1rem, 5vw - 1.5rem, 6rem );
 	margin: 0px 48px;
 
 	@media ${QUERIES.tablets} {
@@ -83,8 +90,12 @@ const Nav = styled.nav`
 	}
 `;
 
-const Side = styled.div`
+const LogoWrapper = styled.div`
 	flex: 1;
+
+	@media ${QUERIES.tablets} {
+		flex:revert;
+	}
 `;
 
 const NavLink = styled.a`
@@ -99,19 +110,31 @@ const NavLink = styled.a`
 	}
 `;
 
-const IconWrapper = styled.div`
-	
-	justify-content: flex-end;
-	gap: 37px;
-	display:none;
+const Side = styled.div`
+	flex:1;
 
-	@media ${QUERIES.phones} {
-		gap: 20px;
+	@media ${QUERIES.tablets} {
+		display: none;
+	
 	}
+
+`;
+const MobileTriggers = styled.div`
+
+	
+	display:none;
 
 	@media ${QUERIES.tablets} {
 		display: flex;
+		gap: 32px;
 	}
-`;
 
+	@media ${QUERIES.phones} {
+		gap: 16px;
+	}
+`
+
+const ShoppingButton = styled(UnstyledButton)`
+  transform: translateX(-2px);
+`
 export default Header;
