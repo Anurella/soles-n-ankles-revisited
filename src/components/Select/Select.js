@@ -37,7 +37,11 @@ const Wrapper = styled.label`
 `;
 
 const VisibleLabel = styled.span`
+<<<<<<< HEAD
 	color: ${COLORS.gray[700]};
+=======
+	color: var(--color-gray-700);
+>>>>>>> a48f2ae560f2c565b000a423e50d79fe9a3d6073
 	margin-right: 16px;
 `;
 
@@ -59,10 +63,17 @@ const NativeSelect = styled.select`
 
 const DisplayedBit = styled.span`
 	display: block;
+<<<<<<< HEAD
 	background: ${COLORS.gray[100]};
 	font-size: 1rem;
 	font-weight: ${WEIGHTS.medium};
 	color: ${COLORS.gray[900]};
+=======
+	background: var(--color-gray-100);
+	font-size: 1rem;
+	font-weight: ${WEIGHTS.medium};
+	color: var(--color-gray-900);
+>>>>>>> a48f2ae560f2c565b000a423e50d79fe9a3d6073
 	padding: 12px 42px 12px 16px;
 	border-radius: 8px;
 	pointer-events: none;

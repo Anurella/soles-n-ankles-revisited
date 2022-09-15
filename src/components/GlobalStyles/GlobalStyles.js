@@ -76,6 +76,18 @@ html {
 html, body, #root {
   height: 100%;
 }
+
+:root {
+  --white: hsl(0deg 0% 100%);
+	--color-gray-100: hsl(185deg 5% 95%);
+		--color-gray-300: hsl(190deg 5% 80%);
+		--color-gray-500: hsl(196deg 4% 60%);
+		--color-gray-700: 220deg 5% 40%;
+		--color-gray-900: hsl(220deg 3% 20%);
+	--primary: hsl(340deg 65% 47%);
+	--secondary: hsl(240deg 60% 63%);
+  --modal-bg: hsl(var(--color-gray-700) / 0.8);
+}
 `;
 
 export default GlobalStyles;
